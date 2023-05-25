@@ -1,8 +1,6 @@
-# switchinputs
+# Switch monitor, mouse and monitor inputs
 
-
-
-# Find the values
+## Find the values
 You will have to figure out what the correct command is that you have to send to your devices for them to switch.
 
 Switch MX Mechanical to input 2:
@@ -46,4 +44,17 @@ You should see your mouse switch to input 2. At the end of the solaar debug log 
 
 ```logitech_receiver.base: (10) <= w[11 02 0A1C 01000000000000000000000000000000]```
 
+## Monitors
 
+```ddcutil capabilities --display 2 --verbose```
+
+```
+...
+Feature: 60 (Input Source)
+      Values (unparsed): 0F 11 12 
+      Values (  parsed):
+         0f: DisplayPort-1
+         11: HDMI-1
+         12: HDMI-2
+...
+```
